@@ -1,0 +1,66 @@
+#!/bin/bash
+#
+# motd
+#
+# Fancy motd status inspired
+# by /r/unixporn
+#
+# (c) 2018 Daniel Jankowski
+
+
+# import the different modules
+source modules/cpu.bash
+source modules/filesystems.bash
+source modules/hostname.bash
+source modules/memory.bash
+source modules/systemd-service.bash
+source modules/updates.bash
+
+
+# configure which services should be
+# displayed with the systemd-service-module
+SERVICES=(
+    "NetworkManager"
+    "firewalld"
+)
+
+# configure which filesystems
+# shoudl be displayed with the
+# filesystems-module
+FILESYSTEMS=(
+    "/"
+    "/boot"
+)
+
+
+# print the uptime
+print_uptime() {
+    uptime -p
+}
+
+# main function and entrypoint of this script
+# it runs the different functions from the modules
+# and prints a newline in order to seperate the
+# outputs.
+main() {
+    print_hostname
+    printf "\n"
+    print_uptime
+    printf "\n"
+    print_filesystems
+    printf "\n"
+    print_systemd_services_status
+    printf "\n"
+    print_cpu_core_temperatures
+    printf "\n"
+    print_memory_status
+    printf "\n"
+    print_updates_arch
+}
+
+
+# fail fast
+set -eo pipefail
+
+# execute the main function with commandline arguments
+main "$@"
