@@ -28,6 +28,6 @@ print_updates_arch() {
         print_indented pacman -Qu
     else
         # if there are not updates, print it either
-        print_indented printf "No updates available\n"
+        printf "  No updates available\n"
     fi
 }
