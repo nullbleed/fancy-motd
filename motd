@@ -10,6 +10,7 @@
 
 # import the different modules
 source modules/cpu.bash
+source modules/docker.bash
 source modules/filesystems.bash
 source modules/hostname.bash
 source modules/lastlogin.bash
@@ -51,10 +52,19 @@ USERS=(
 )
 
 
+# configure which containers should
+# be checked in the docker-module
+CONTAINER=(
+    "sql"
+    "sf.app"
+)
+
+
 # print the uptime
 print_uptime() {
     uptime -p
 }
+
 
 # main function and entrypoint of this script
 # it runs the different functions from the modules
@@ -68,6 +78,8 @@ main() {
     print_filesystems
     printf "\n"
     print_systemd_services_status
+    printf "\n"
+    print_docker_status
     printf "\n"
     print_cpu_core_temperatures
     printf "\n"
