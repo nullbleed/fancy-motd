@@ -19,11 +19,10 @@ print_last_login() {
     for user in "${USERS[@]}"; do
         # get the latest login from lastlog
         login=$( lastlog -u $user \
-            | tail -n1 \
-            | gawk '{print $4" "$5" "$6" "$7" "$9" on "$3" from "$2}'
+            | tail -n1 
         )
 
         # print the status for the current user
-        printf "  $user at $login\n"
+        printf "  $login\n"
     done
 }
