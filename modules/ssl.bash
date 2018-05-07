@@ -8,6 +8,9 @@
 # (c) 2018 Daniel Jankowski
 
 
+# print the status of ssl ceritificates for
+# different domains and perform an expiration
+# check
 print_ssl_expire_date() {
     # print the module title
     printf "SSL Certificates:\n"
