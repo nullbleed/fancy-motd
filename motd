@@ -13,6 +13,7 @@ source modules/cpu.bash
 source modules/filesystems.bash
 source modules/hostname.bash
 source modules/memory.bash
+source modules/ssl.bash
 source modules/systemd-service.bash
 source modules/updates.bash
 
@@ -30,6 +31,11 @@ SERVICES=(
 FILESYSTEMS=(
     "/"
     "/boot"
+)
+
+DOMAINS=(
+    "domain.com"
+    "example.com"
 )
 
 
@@ -54,6 +60,8 @@ main() {
     print_cpu_core_temperatures
     printf "\n"
     print_memory_status
+    printf "\n"
+    print_ssl_expire_date
     printf "\n"
     print_updates_arch
 }
