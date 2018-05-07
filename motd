@@ -34,9 +34,20 @@ FILESYSTEMS=(
     "/boot"
 )
 
+# configure which domains
+# the ssl module should display
+# the expiration of the Certificate
 DOMAINS=(
     "domain.com"
     "example.com"
+)
+
+
+# configure for which users the last
+# login should be displayed
+USERS=(
+    "$USER"
+    "root"
 )
 
 
