@@ -12,6 +12,7 @@
 source modules/cpu.bash
 source modules/filesystems.bash
 source modules/hostname.bash
+source modules/lastlogin.bash
 source modules/memory.bash
 source modules/ssl.bash
 source modules/systemd-service.bash
@@ -64,6 +65,8 @@ main() {
     print_ssl_expire_date
     printf "\n"
     print_updates_arch
+    printf "\n"
+    print_last_login
 }
 
 
