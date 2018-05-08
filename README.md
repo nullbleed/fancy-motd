@@ -10,6 +10,26 @@ Inspiration by: [https://www.reddit.com/r/unixporn/comments/8gwcti/motd_ubuntu_s
 ![screenshot](./screenshot.png)
 
 
+## Requirements
+
+- bash
+- openssl
+- figlet
+- coreutils
+- docker (optional for docker-module)
+- systemd (optional for systemd-service-module)
+
+
+## Usage
+
+- Customize the `motd`-file. In the main function
+  you're able to change the order of the stats or
+  disable them.  
+  On the top there are arrays to configure different
+  modules.
+- Run `./motd` or `bash motd`
+
+
 ## License
 
 (c) 2018 Bernd Busse, Daniel Jankowski  
