@@ -21,11 +21,14 @@ print_docker_status() {
 
     # print the module title
     printf "Docker Status:\n"
+
+    # get all running containers
+    local running_containers="$( docker ps )"
      
     # iterate through every configured container names
     for container_name in "${CONTAINER[@]}"; do
         # check if the container is running
-        local status=$( docker ps | grep -oP "(?<= )$container_name$" | wc -l )
+        local status=$( echo -n "$running_containers" | grep -oP "(?<= )$container_name$" | wc -l )
 
         # check if the container is running...
         if [[ "$status"  = "1" ]] ; then
