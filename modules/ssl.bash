@@ -35,8 +35,8 @@ print_ssl_expire_date() {
 
         # define some colors
         #TODO: config file
-        local color_valid='\e[32;5;1m'
-        local color_invalid='\e[38;5;1m'
+        local color_valid='\e[32m'
+        local color_invalid='\e[38m'
         local color_reset='\e[0m'
 
         # check if the certificate is expired
