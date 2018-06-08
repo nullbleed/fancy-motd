@@ -25,7 +25,10 @@ print_ssl_expire_date() {
         # get the expiration date from the domain certificates
         # with openssl
         local expire_date=$(
-            openssl s_client -connect "$domain:443" < /dev/null 2>/dev/null \
+            openssl s_client \
+                -connect "$domain:443" \
+                -servername "$domain" \
+                < /dev/null 2>/dev/null \
                 | openssl x509 -noout -enddate \
                 | grep -oP '(?<=notAfter=).*'
         )
