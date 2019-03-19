@@ -15,8 +15,8 @@
 print_docker_status() {
     # some color definitions
     #TODO: define them in a config file
-    local color_active='\e[32;5;1m'
-    local color_inactive='\e[38;5;1m'
+    local color_active='\e[32m'
+    local color_inactive='\e[38m'
     local color_reset='\e[0m'
 
     # print the module title

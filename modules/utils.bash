@@ -28,8 +28,8 @@ draw_bar() {
 
     # color definitions
     #TODO: config file
-    local color_used='\e[32;5;1m'
-    local color_free='\e[1;30;1m'
+    local color_used='\e[32m'
+    local color_free='\e[90m'
     local color_reset='\e[0m'
 
     # initialize the color-state:
